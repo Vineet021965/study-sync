@@ -1,7 +1,7 @@
 const express = require("express");
-const cors = require("cors");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
+const cors = require("cors");
 const assignmentRoutes = require("./routes/assignmentRoutes");
 const authRoutes = require("./routes/authRoutes");
 
@@ -15,9 +15,6 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
-
-//cors
-const cors = require("cors");
 
 //Routes
 app.use("/api/auth", authRoutes);
