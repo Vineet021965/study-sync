@@ -1,10 +1,12 @@
 import API from "./api";
 
+
 // Register User
+
 export const registerUser = async (userData) => {
 
   const response = await API.post(
-    "/users/register",
+    "/auth/register",
     userData
   );
 
@@ -21,10 +23,11 @@ export const registerUser = async (userData) => {
 
 
 // Login User
+
 export const loginUser = async (userData) => {
 
   const response = await API.post(
-    "/users/login",
+    "/auth/login",
     userData
   );
 
