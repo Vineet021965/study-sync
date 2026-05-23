@@ -18,7 +18,10 @@ const app = express();
 // Middleware
 
 app.use(cors({
-  origin: "https://study-sync-gilt-five.vercel.app",
+  origin: [
+    "http://localhost:5173",
+    "https://study-sync-c7ofjrs4o-vineet021965s-projects.vercel.app"
+  ],
   credentials: true,
 }));
 
