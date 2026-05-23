@@ -2,10 +2,18 @@ import API from "./api";
 
 // Register User
 export const registerUser = async (userData) => {
-  const response = await API.post("/auth/register", userData);
+
+  const response = await API.post(
+    "/users/register",
+    userData
+  );
 
   if (response.data.token) {
-    localStorage.setItem("token", response.data.token);
+
+    localStorage.setItem(
+      "token",
+      response.data.token
+    );
   }
 
   return response.data;
@@ -14,10 +22,18 @@ export const registerUser = async (userData) => {
 
 // Login User
 export const loginUser = async (userData) => {
-  const response = await API.post("/auth/login", userData);
+
+  const response = await API.post(
+    "/users/login",
+    userData
+  );
 
   if (response.data.token) {
-    localStorage.setItem("token", response.data.token);
+
+    localStorage.setItem(
+      "token",
+      response.data.token
+    );
   }
 
   return response.data;
