@@ -23,7 +23,6 @@ function DashboardLayout({ children }) {
     navigate("/");
   };
 
-  // Close profile dropdown on outside click
   useEffect(() => {
 
     const handleClickOutside = (event) => {
@@ -51,13 +50,13 @@ function DashboardLayout({ children }) {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white relative overflow-hidden">
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
 
-      {/* BACKGROUND GLOW */}
+      {/* GLOW EFFECTS */}
 
-      <div className="absolute w-96 h-96 bg-green-500 blur-3xl opacity-10 rounded-full top-10 left-10"></div>
+      <div className="absolute w-72 sm:w-96 h-72 sm:h-96 bg-green-500 blur-3xl opacity-10 rounded-full top-10 left-10"></div>
 
-      <div className="absolute w-96 h-96 bg-blue-500 blur-3xl opacity-10 rounded-full bottom-10 right-10"></div>
+      <div className="absolute w-72 sm:w-96 h-72 sm:h-96 bg-blue-500 blur-3xl opacity-10 rounded-full bottom-10 right-10"></div>
 
       {/* SIDEBAR */}
 
@@ -68,7 +67,7 @@ function DashboardLayout({ children }) {
 
       {/* TOPBAR */}
 
-      <div className="relative z-30 flex items-center justify-between px-6 py-4 border-b border-white/10 backdrop-blur-lg bg-white/5">
+      <div className="relative z-30 flex items-center justify-between px-4 sm:px-6 py-4 border-b border-white/10 backdrop-blur-lg bg-white/5">
 
         {/* MENU BUTTON */}
 
@@ -88,30 +87,26 @@ function DashboardLayout({ children }) {
 
           <button
             onClick={() => setProfileOpen(!profileOpen)}
-            className="text-4xl text-green-400 hover:scale-110 transition"
+            className="text-3xl sm:text-4xl text-green-400 hover:scale-110 transition"
           >
             <FaUserCircle />
           </button>
 
-          {/* DROPDOWN */}
-
           {
             profileOpen && (
-              <div className="absolute right-0 top-16 w-64 backdrop-blur-xl bg-zinc-900/95 border border-white/10 rounded-2xl shadow-2xl p-5 z-50">
-
-                {/* USER INFO */}
+              <div className="absolute right-0 top-14 w-56 sm:w-64 backdrop-blur-xl bg-zinc-900/95 border border-white/10 rounded-2xl shadow-2xl p-5 z-50">
 
                 <div className="flex items-center gap-4">
 
-                  <FaUserCircle className="text-5xl text-green-400" />
+                  <FaUserCircle className="text-4xl sm:text-5xl text-green-400" />
 
                   <div>
 
-                    <h2 className="text-lg font-semibold">
+                    <h2 className="text-base sm:text-lg font-semibold">
                       Student User
                     </h2>
 
-                    <p className="text-sm text-zinc-400">
+                    <p className="text-xs sm:text-sm text-zinc-400">
                       student@gmail.com
                     </p>
 
@@ -119,34 +114,14 @@ function DashboardLayout({ children }) {
 
                 </div>
 
-                {/* DIVIDER */}
-
                 <div className="border-t border-white/10 my-4"></div>
 
-                {/* OPTIONS */}
-
-                <div className="space-y-2">
-
-                  <button
-                    className="w-full text-left px-4 py-3 rounded-xl hover:bg-white/10 transition"
-                  >
-                    Profile
-                  </button>
-
-                  <button
-                    className="w-full text-left px-4 py-3 rounded-xl hover:bg-white/10 transition"
-                  >
-                    Settings
-                  </button>
-
-                  <button
-                    onClick={logoutHandler}
-                    className="w-full text-left px-4 py-3 rounded-xl bg-red-500/80 hover:bg-red-600 transition"
-                  >
-                    Logout
-                  </button>
-
-                </div>
+                <button
+                  onClick={logoutHandler}
+                  className="w-full text-left px-4 py-3 rounded-xl bg-red-500/80 hover:bg-red-600 transition"
+                >
+                  Logout
+                </button>
 
               </div>
             )
@@ -158,7 +133,7 @@ function DashboardLayout({ children }) {
 
       {/* MAIN CONTENT */}
 
-      <div className="relative z-10 p-8">
+      <div className="relative z-10 p-4 sm:p-8">
 
         {children}
 

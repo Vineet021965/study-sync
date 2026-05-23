@@ -50,7 +50,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
       {/* SIDEBAR */}
 
       <div
-        className={`fixed top-0 left-0 h-full w-72 backdrop-blur-xl bg-white/10 border-r border-white/20 z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full w-64 sm:w-72 backdrop-blur-xl bg-zinc-900/95 border-r border-white/10 z-50 transform transition-transform duration-300 ${
           sidebarOpen
             ? "translate-x-0"
             : "-translate-x-full"
@@ -63,11 +63,11 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
           <div className="mb-10">
 
-            <h1 className="text-3xl font-bold text-green-400">
+            <h1 className="text-2xl sm:text-3xl font-bold text-green-400">
               StudySync 🚀
             </h1>
 
-            <p className="text-zinc-400 mt-2">
+            <p className="text-zinc-400 mt-2 text-sm sm:text-base">
               Productivity Platform
             </p>
 
@@ -94,7 +94,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                   {item.icon}
                 </span>
 
-                <span className="text-lg">
+                <span className="text-base sm:text-lg">
                   {item.name}
                 </span>
 
