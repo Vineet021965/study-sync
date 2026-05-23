@@ -16,6 +16,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+//cors
+const cors = require("cors");
+
 //Routes
 app.use("/api/auth", authRoutes);
 
